@@ -1,0 +1,3 @@
+line_openai_bot.channel_secret
+line_openai_bot.channel_access_token
+line_openai_bot.openai_api_key

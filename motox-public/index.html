@@ -140,6 +140,7 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
 .series-range b { font-family: "Barlow Condensed", sans-serif; font-size: 23px; line-height: 1; }
 .series-range small { margin-top: 4px; color: #b9bdc3; font-size: 10px; text-transform: uppercase; }
 .series-range a:hover small, .series-range a.featured small { color: white; }
+.series-range a.tds-download small::after { content: " \\2193"; font-size: 13px; font-weight: 800; }
 
 .why { background: #080808; color: white; overflow: hidden; }
 .why-grid { min-height: 230px; display: grid; grid-template-columns: 44% 56%; align-items: stretch; }
@@ -390,9 +391,9 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
         </div>
         <div class="series-range" aria-label="MOTOX product specifications">
           <div class="series-heading"><span>Full Product Series</span><strong>Available Grades</strong></div>
-          <a href="#contact"><b>10W30</b><small>Engine Oil</small></a>
-          <a class="featured" href="#contact"><b>10W40</b><small>Full Synthetic</small></a>
-          <a href="#contact"><b>15W40</b><small>Engine Oil</small></a>
+          <a class="tds-download" href="downloads/MOTOX_SQ_10W-30_Typical_Properties.pdf" download aria-label="Download MOTOX SQ 10W-30 technical data sheet PDF"><b>10W30</b><small>Download TDS (PDF)</small></a>
+          <a class="featured tds-download" href="downloads/MOTOX_SQ_10W-40_Typical_Properties.pdf" download aria-label="Download MOTOX SQ 10W-40 technical data sheet PDF"><b>10W40</b><small>Download TDS (PDF)</small></a>
+          <a class="tds-download" href="downloads/MOTOX_CI-4_15W-40_Typical_Properties.pdf" download aria-label="Download MOTOX CI-4 15W-40 technical data sheet PDF"><b>15W40</b><small>Download TDS (PDF)</small></a>
           <a href="#contact"><b>5W40</b><small>Full Synthetic</small></a>
           <a href="#contact"><b>ATF</b><small>Transmission Fluid</small></a>
         </div>

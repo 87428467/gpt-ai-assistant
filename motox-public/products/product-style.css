@@ -1,0 +1,94 @@
+:root {
+  --red: #e30613;
+  --black: #08090b;
+  --paper: #f2f3f5;
+  --ink: #16191e;
+  --muted: #68717c;
+  --line: #d9dde2;
+  --max: 1120px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Rajdhani", Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+.container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+.header { height: 72px; color: white; background: #050505; border-bottom: 1px solid rgba(227,6,19,.6); }
+.nav { height: 100%; display: flex; align-items: center; gap: 30px; }
+.brand { width: 190px; }
+.nav-links { margin-left: auto; display: flex; align-items: center; gap: 28px; font-weight: 700; }
+.nav-links a:hover, .nav-links a.active { color: var(--red); }
+.contact-btn { padding: 11px 18px; color: white; background: var(--red); border-radius: 4px; font-weight: 700; }
+.page-hero { color: white; background: linear-gradient(105deg,#050505 0%,#15171b 68%,#4c050b); border-bottom: 3px solid var(--red); }
+.page-hero .container { min-height: 240px; display: grid; align-content: center; }
+.eyebrow { color: #ff3945; font-size: 13px; font-weight: 800; text-transform: uppercase; }
+h1,h2,h3 { margin: 0; font-family: "Barlow Condensed","Arial Narrow",sans-serif; text-transform: uppercase; }
+.page-hero h1 { margin-top: 10px; font-size: clamp(48px,7vw,76px); font-style: italic; line-height: .92; }
+.page-hero p { max-width: 650px; margin: 16px 0 0; color: #c6cbd2; font-size: 17px; }
+.catalog { padding: 50px 0 70px; }
+.catalog-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+.catalog-head h2 { font-size: 34px; }
+.catalog-head p { max-width: 540px; margin: 0; color: var(--muted); }
+.product-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.oil-card { min-height: 220px; display: flex; flex-direction: column; background: white; border: 1px solid var(--line); border-top: 4px solid #202329; box-shadow: 0 10px 25px rgba(0,0,0,.08); transition: transform .2s ease, border-color .2s ease; }
+.oil-card:hover { transform: translateY(-3px); border-top-color: var(--red); }
+.oil-card.featured { border-top-color: var(--red); }
+.oil-card-body { flex: 1; padding: 24px; }
+.oil-card .family { color: var(--red); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+.oil-card h3 { margin-top: 5px; font-size: 38px; }
+.oil-card p { color: var(--muted); margin: 9px 0 0; }
+.oil-card-footer { padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; background: #f7f8f9; border-top: 1px solid var(--line); font-weight: 800; text-transform: uppercase; }
+.oil-card-footer span:last-child { color: var(--red); font-size: 20px; }
+.detail-hero { color: white; background: linear-gradient(115deg,#050505,#15171b 62%,#63050c); border-bottom: 3px solid var(--red); }
+.breadcrumbs { padding-top: 22px; color: #aeb4bc; font-size: 13px; }
+.breadcrumbs a:hover { color: white; }
+.detail-grid { min-height: 430px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
+.detail-copy .family { color: #ff3945; font-weight: 800; text-transform: uppercase; }
+.detail-copy h1 { margin-top: 5px; font-size: clamp(60px,8vw,92px); font-style: italic; line-height: .88; }
+.detail-copy .subtitle { margin: 15px 0 0; color: #d0d4da; font-size: 19px; }
+.product-image { height: 380px; display: grid; place-items: center; overflow: hidden; }
+.product-image img { max-height: 360px; object-fit: contain; filter: drop-shadow(0 22px 25px rgba(0,0,0,.55)); }
+.detail-main { padding: 44px 0 70px; }
+.detail-layout { display: grid; grid-template-columns: minmax(0,1.65fr) minmax(280px,.75fr); gap: 32px; align-items: start; }
+.content-panel, .document-panel { background: white; border: 1px solid var(--line); }
+.content-panel { padding: 30px; }
+.content-panel h2, .document-panel h2 { font-size: 28px; }
+.content-panel > p { color: var(--muted); line-height: 1.6; }
+.spec-table { margin-top: 26px; border-top: 3px solid var(--red); }
+.spec-row { min-height: 54px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.spec-row span { color: var(--muted); font-size: 13px; text-transform: uppercase; }
+.spec-row strong { text-align: right; }
+.document-panel { padding: 26px; border-top: 4px solid var(--red); }
+.document-panel > p { color: var(--muted); line-height: 1.45; }
+.doc-meta { margin: 18px 0; padding: 14px; background: #f4f5f6; border-left: 3px solid var(--red); }
+.doc-meta strong, .doc-meta span { display: block; }
+.doc-meta span { margin-top: 3px; color: var(--muted); font-size: 13px; }
+.download-btn, .request-btn { min-height: 46px; display: flex; align-items: center; justify-content: center; padding: 0 16px; border-radius: 3px; font-weight: 800; text-transform: uppercase; }
+.download-btn { color: white; background: var(--red); }
+.download-btn:hover { background: #b9000c; }
+.request-btn { border: 1px solid #b9bec5; background: white; }
+.back-link { display: inline-flex; margin-top: 26px; color: var(--red); font-weight: 800; text-transform: uppercase; }
+.footer { padding: 30px 0; color: #aab0b8; background: #090a0c; border-top: 1px solid #282b30; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.footer img { width: 170px; }
+.footer p { margin: 0; text-align: right; font-size: 13px; }
+@media (max-width: 820px) {
+  .nav-links { display: none; }
+  .contact-btn { margin-left: auto; }
+  .product-list { grid-template-columns: repeat(2,1fr); }
+  .detail-grid, .detail-layout { grid-template-columns: 1fr; }
+  .detail-grid { padding: 25px 0 35px; }
+  .product-image { order: -1; height: 280px; }
+  .product-image img { max-height: 270px; }
+}
+@media (max-width: 560px) {
+  .container { width: min(100% - 28px,var(--max)); }
+  .header { height: 64px; }
+  .brand { width: 155px; }
+  .contact-btn { padding: 9px 11px; font-size: 12px; }
+  .product-list { grid-template-columns: 1fr; }
+  .catalog-head { display: block; }
+  .catalog-head p { margin-top: 10px; }
+  .footer-row { display: block; }
+  .footer p { margin-top: 14px; text-align: left; }
+}

@@ -122,14 +122,20 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
 .section-heading { text-align: center; margin-bottom: 24px; }
 .section-heading h2 { font-size: 36px; }
 .section-heading span { display: block; width: 48px; height: 3px; background: var(--motox-red); margin: 9px auto 0; }
-.product-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; }
-.product-card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-.product-card img { width: 100%; height: 230px; object-fit: cover; object-position: center; }
-.product-card img.carton-crop { object-position: 24% 32%; }
-.product-card img.bulk-crop { object-position: 70% 40%; }
-.card-body { padding: 18px 20px 22px; }
-.card-body h3 { font-size: 26px; }
-.card-body p { min-height: 44px; color: #555d65; margin: 5px 0 12px; }
+.section-heading p { max-width: 620px; margin: 9px auto 0; color: #60676f; }
+.product-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 26px; }
+.product-card { grid-column: span 2; display: flex; flex-direction: column; background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.product-card:nth-last-child(2) { grid-column: 2 / span 2; }
+.product-photo { height: 320px; background: linear-gradient(145deg,#e5e8eb,#f8f9fa); overflow: hidden; border-bottom: 3px solid var(--motox-red); }
+.product-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+.product-photo img.focus-lower { object-position: center 65%; }
+.product-photo img.landscape { object-position: center; }
+.card-body { display: flex; flex: 1; flex-direction: column; padding: 18px 20px 22px; }
+.product-kicker { color: var(--motox-red); font-family: "Barlow Condensed", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.card-body h3 { margin-top: 3px; font-size: 26px; }
+.card-body p { min-height: 66px; color: #555d65; margin: 5px 0 12px; }
+.product-meta { display: flex; gap: 8px; margin: auto 0 15px; }
+.product-meta span { padding: 5px 9px; border: 1px solid #d6d9dd; background: #f4f5f6; color: #30343a; font-size: 12px; font-weight: 800; line-height: 1; text-transform: uppercase; }
 .card-body a { color: var(--motox-red); font-weight: 800; text-transform: uppercase; }
 .series-range { margin-top: 22px; display: grid; grid-template-columns: 1.25fr repeat(5,1fr); background: #101114; color: white; border-left: 4px solid var(--motox-red); box-shadow: var(--shadow); }
 .series-heading, .series-range a { min-height: 66px; display: flex; flex-direction: column; justify-content: center; padding: 9px 18px; border-right: 1px solid rgba(255,255,255,.13); }
@@ -183,7 +189,8 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
   .benefit-grid { grid-template-columns: repeat(2,1fr); padding: 18px 0; }
   .benefit-grid article:nth-child(2) { border-right: 0; }
   .product-grid { grid-template-columns: repeat(2,1fr); }
-  .product-card:last-child { grid-column: 1 / -1; }
+  .product-card, .product-card:nth-last-child(2) { grid-column: auto; }
+  .product-card:last-child { grid-column: 1 / -1; width: calc((100% - 26px) / 2); justify-self: center; }
   .series-range { grid-template-columns: repeat(3,1fr); }
   .series-heading { grid-column: 1 / -1; }
   .why-grid { grid-template-columns: 1fr; }
@@ -212,7 +219,7 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
   .benefit-grid { grid-template-columns: 1fr; }
   .benefit-grid article { border-right: 0; border-bottom: 1px solid rgba(227,6,19,.4); padding: 22px 8px; }
   .product-grid { grid-template-columns: 1fr; }
-  .product-card:last-child { grid-column: auto; }
+  .product-card:last-child { grid-column: auto; width: 100%; }
   .series-range { grid-template-columns: repeat(2,1fr); }
   .series-heading { grid-column: 1 / -1; }
   .trust-grid { grid-template-columns: repeat(2,1fr); }
@@ -265,10 +272,13 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
   .section-heading h2 { font-size: 25px; }
   .section-heading span { margin-top: 5px; width: 42px; height: 2px; }
   .product-grid { gap: 25px; }
-  .product-card img { height: 180px; }
+  .product-photo { height: 280px; }
   .card-body { padding: 10px 20px 12px; }
   .card-body h3 { font-size: 17px; }
-  .card-body p { min-height: 30px; font-size: 11px; line-height: 1.25; margin: 3px 0 6px; }
+  .card-body p { min-height: 43px; font-size: 11px; line-height: 1.25; margin: 3px 0 8px; }
+  .product-kicker { font-size: 9px; }
+  .product-meta { margin-bottom: 9px; }
+  .product-meta span { font-size: 9px; padding: 4px 7px; }
   .card-body a { font-size: 11px; }
   .series-range { margin-top: 14px; }
   .series-heading, .series-range a { min-height: 58px; padding: 7px 13px; }
@@ -313,7 +323,7 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
       <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
       <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
         <a class="active" href="#home">Home</a>
-        <a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/index.html">Products</a>
+        <a href="#products">Products</a>
         <a href="#technology">Technology</a>
         <a href="#about">About</a>
         <a href="#distributors">Distributors</a>
@@ -332,7 +342,7 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
           <h1>Performance<br>Lubricants Built<br>for Modern Engines</h1>
           <p>High-performance lubricants engineered for drivers and professionals who demand more. Reliable protection, thermal stability and power — every time.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/index.html">Explore Products <span>→</span></a>
+            <a class="button button-primary" href="#products">Explore Products <span>→</span></a>
             <a class="button button-outline" href="#distributors">Become a Distributor <span>→</span></a>
           </div>
           <div class="hero-values">
@@ -344,7 +354,7 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
         </div>
         <div class="hero-product">
           <div class="hero-glow" aria-hidden="true"></div>
-          <img src="product_can_hero_v3.png?v=49257ce" alt="MOTOX 10W40 full synthetic 4 liter metal can">
+          <img src="product_can_hero_v3.png" alt="MOTOX 10W40 full synthetic 4 liter metal can">
         </div>
       </div>
     </section>
@@ -373,28 +383,37 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
         <div class="section-heading">
           <h2>Our Product Range</h2>
           <span></span>
+          <p>Explore MOTOX X Series and H Series engine oils in practical retail sizes.</p>
         </div>
         <div class="product-grid">
           <article class="product-card">
-            <img src="https://images.weserv.nl/?url=https%3A%2F%2Ffiles.catbox.moe%2F2rlpzh.jpg" loading="lazy" alt="MOTOX 4 liter metal oil can">
-            <div class="card-body"><h3>4L Metal Can</h3><p>Premium presentation and durable packaging for professional retail channels.</p><a href="#contact">View Details →</a></div>
+            <div class="product-photo"><img class="focus-lower" src="motox-x-series-10w40-api-sq-4l.jpg" loading="lazy" width="1080" height="1920" alt="MOTOX X Series 10W-40 API SQ full synthetic engine oil, 4 liter metal can"></div>
+            <div class="card-body"><span class="product-kicker">X Series · Full Synthetic</span><h3>10W-40 API SQ</h3><p>High-performance full synthetic engine oil engineered for power, engine protection and thermal stability.</p><div class="product-meta"><span>4 Liters</span><span>API SQ</span></div><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/x-series-10w40.html">View Product →</a></div>
           </article>
           <article class="product-card">
-            <img class="carton-crop" src="https://images.weserv.nl/?url=https%3A%2F%2Ffiles.catbox.moe%2Ffzpqph.jpg" loading="lazy" alt="MOTOX carton packaging">
-            <div class="card-body"><h3>Carton Packaging</h3><p>Robust cartons designed for stacking, handling and international distribution.</p><a href="#contact">View Details →</a></div>
+            <div class="product-photo"><img src="motox-x-series-10w40-api-sq-1l.jpg" loading="lazy" width="1280" height="1707" alt="MOTOX X Series 10W-40 API SQ full synthetic engine oil, 1 liter metal can"></div>
+            <div class="card-body"><span class="product-kicker">X Series · Full Synthetic</span><h3>10W-40 API SQ</h3><p>High-performance full synthetic engine oil engineered for power, engine protection and thermal stability.</p><div class="product-meta"><span>1 Liter</span><span>API SQ</span></div><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/x-series-10w40.html">View Product →</a></div>
           </article>
           <article class="product-card">
-            <img class="bulk-crop" src="https://images.weserv.nl/?url=https%3A%2F%2Ffiles.catbox.moe%2Ffzpqph.jpg" loading="lazy" alt="MOTOX wholesale cartons">
-            <div class="card-body"><h3>Bulk Supply</h3><p>Reliable bulk supply for wholesalers, distributors and industrial partners.</p><a href="#contact">View Details →</a></div>
+            <div class="product-photo"><img src="motox-x-series-10w30-api-sq-4l.jpg" loading="lazy" width="1280" height="1707" alt="MOTOX X Series 10W-30 API SQ full synthetic engine oil, 4 liter metal can"></div>
+            <div class="card-body"><span class="product-kicker">X Series · Full Synthetic</span><h3>10W-30 API SQ</h3><p>High-performance full synthetic engine oil designed for responsive power, protection and dependable cleanliness.</p><div class="product-meta"><span>4 Liters</span><span>API SQ</span></div><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/x-series-10w30.html">View Product →</a></div>
+          </article>
+          <article class="product-card">
+            <div class="product-photo"><img src="motox-h-series-15w40-api-ci4-sl-1l.jpg" loading="lazy" width="1279" height="1706" alt="MOTOX H Series 15W-40 API CI-4/SL synthetic technology engine oil, 1 liter bottle"></div>
+            <div class="card-body"><span class="product-kicker">H Series · Synthetic Technology</span><h3>15W-40 API CI-4/SL</h3><p>Performance engine oil formulated for dependable protection, cleanliness and thermal stability under load.</p><div class="product-meta"><span>1 Liter</span><span>API CI-4/SL</span></div><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/h-series-15w40.html">View Product →</a></div>
+          </article>
+          <article class="product-card">
+            <div class="product-photo"><img class="landscape" src="motox-h-series-15w40-api-ci4-sl-6l.jpg" loading="lazy" width="1920" height="1080" alt="MOTOX H Series 15W-40 API CI-4/SL synthetic technology engine oil, 6 liter container"></div>
+            <div class="card-body"><span class="product-kicker">H Series · Synthetic Technology</span><h3>15W-40 API CI-4/SL</h3><p>Performance engine oil formulated for dependable protection, cleanliness and thermal stability under load.</p><div class="product-meta"><span>6 Liters</span><span>API CI-4/SL</span></div><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/h-series-15w40.html">View Product →</a></div>
           </article>
         </div>
         <div class="series-range" aria-label="MOTOX product specifications">
           <div class="series-heading"><span>Full Product Series</span><strong>Available Grades</strong></div>
-          <a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/detail.html#10w30"><b>10W30</b><small>View Product</small></a>
-          <a class="featured" href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/detail.html#10w40"><b>10W40</b><small>View Product</small></a>
-          <a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/detail.html#15w40"><b>15W40</b><small>View Product</small></a>
-          <a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/detail.html#5w40"><b>5W40</b><small>View Product</small></a>
-          <a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/detail.html#atf"><b>ATF</b><small>View Product</small></a>
+          <a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/x-series-10w30.html"><b>10W30</b><small>View Product</small></a>
+          <a class="featured" href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/x-series-10w40.html"><b>10W40</b><small>View Product</small></a>
+          <a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/h-series-15w40.html"><b>15W40</b><small>View Product</small></a>
+          <a href="#contact"><b>5W40</b><small>Full Synthetic</small></a>
+          <a href="#contact"><b>ATF</b><small>Transmission Fluid</small></a>
         </div>
       </div>
     </section>
@@ -427,8 +446,8 @@ h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-t
   <footer id="contact" class="footer">
     <div class="container footer-grid">
       <div class="footer-brand"><img src="motox_logo_on_black.png" alt="MOTOX"><p>Performance-driven lubricants for professional markets and demanding drivers.</p></div>
-      <div><h3>Quick Links</h3><a href="#home">Home</a><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/index.html">Products</a><a href="#technology">Technology</a><a href="#about">About</a></div>
-      <div><h3>Products</h3><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/index.html">Engine Oils</a><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/index.html">Commercial Oils</a><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/index.html">Industrial Oils</a><a href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/products/index.html">Coolants</a></div>
+      <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#products">Products</a><a href="#technology">Technology</a><a href="#about">About</a></div>
+      <div><h3>Products</h3><a href="#">Engine Oils</a><a href="#">Commercial Oils</a><a href="#">Industrial Oils</a><a href="#">Coolants</a></div>
       <div><h3>Company</h3><a href="#about">About Us</a><a href="#">Quality</a><a href="#">Careers</a><a href="#">News</a></div>
       <div><h3>Contact Us</h3><p><a href="tel:+493061633942">Office: +49 (0)30 61633942</a></p><p><a href="mailto:service@muxxlube.com">service@muxxlube.com</a></p><p>MUXX OIL GmbH<br>Ebersstrasse 61<br>10827 Berlin, Germany</p></div>
     </div>

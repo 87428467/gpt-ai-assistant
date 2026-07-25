@@ -70,7 +70,7 @@ function renderProduct() {
   if (product.document) {
     area.innerHTML = '<div class="doc-meta"><strong>' + product.documentName + '</strong><span>PDF &middot; Technical Data Sheet</span></div><a class="download-btn" href="' + product.document + '" download>Download TDS (PDF) &darr;</a>';
   } else {
-    area.innerHTML = '<div class="doc-meta"><strong>TDS available on request</strong><span>Contact our team for the latest document.</span></div><a class="request-btn" href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/index.html#contact">Request Technical Data</a>';
+    area.innerHTML = '<div class="doc-meta"><strong>TDS available on request</strong><span>Contact our team for the latest document.</span></div><a class="request-btn" href="https://htmlpreview.github.io/?https://github.com/87428467/gpt-ai-assistant/blob/main/motox-public/index.html">Request Technical Data</a>';
   }
 }
 
